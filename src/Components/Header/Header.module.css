@@ -1,0 +1,36 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    height: 2.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0 5rem;
+}
+
+.image {
+    width: 4rem;
+    height: 2.25rem;
+}
+
+.user {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.search {
+    justify-content: center;
+}
+
+.button {
+    margin: 0 1.5rem;
+    height: 2.5rem;
+    width: 4.5rem;
+}
+
+.userInfo {
+    margin: 0 5rem;
+}

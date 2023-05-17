@@ -1,0 +1,10 @@
+.carousel {
+    display: flex;
+    width: 94rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 20px;
+    padding: 20px 20px 0;
+  }
+  

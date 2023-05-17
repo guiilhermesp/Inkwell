@@ -1,0 +1,39 @@
+.page {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .details {
+    margin-bottom: 20px;
+  }
+  
+  .author,
+  .publishedYear,
+  .editionCount {
+    margin: 0;
+  }
+  
+  .subjectsTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subjectsList {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .subject {
+    margin-bottom: 5px;
+  }
+  
