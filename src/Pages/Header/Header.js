@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Input from "../Forms/Input";
+import Input from "../../Components/Forms/Input";
 import styles from "./Header.module.css";
 import { fetchSearchBook } from "../../Services/searchBookSlice";
 import { useDispatch } from "react-redux";
-import Button from "../Forms/Button";
+import Button from "../../Components/Forms/Button";
 import { useNavigate } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import { AiOutlineUser } from "react-icons/ai";
@@ -37,7 +37,7 @@ const Header = () => {
         />
       </div>
       <div className={styles.search}>
-        <Input onChange={setSearch} onKeyPress={handleKeyPress} />
+        <Input onChange={setSearch} onKeyPress={handleKeyPress} className={styles.input} />
         <Button onClick={handleSearch} className={styles.button}>
           Search
         </Button>

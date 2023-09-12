@@ -1,0 +1,12 @@
+:root {
+  --first-input-color: #eeecff;
+  --first-button-color: #d0ceff;
+
+  --first-input-color-hover: #dad8eb;
+  --first-button-color-hover: #bcbaeb;
+
+  --first-input-color-disabled: #f5f5f5;
+  --first-button-color-disabled: #e4e2ff;
+
+  --shadow-box: #505050;
+}

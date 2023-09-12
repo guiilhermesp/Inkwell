@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./Components/Home/Home";
-import Header from "./Components/Header/Header";
+import Home from "./Pages/Home/Home";
 import Search from "./Components/Search/Search";
-import BookContent from "./Components/BookContent/BookContent";
-import Footer from "./Components/Footer/Footer";
+import BookContent from "./Pages/BookContent/BookContent";
+import Header from "./Pages/Header/Header";
+import Footer from "./Pages/Footer/Footer";
 
 function App() {
   return (

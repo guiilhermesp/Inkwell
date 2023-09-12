@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-const Input = ({ onChange, ...props }) => {
+const Input = ({ onChange, className, ...props }) => {
   return (
     <input
-      className={styles.content}
+      className={`${className} ${styles.content}`}
       onChange={(e) => onChange(e.target.value)}
       {...props}
     />

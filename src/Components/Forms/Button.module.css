@@ -1,6 +1,14 @@
+@import "../../Colors.css";
+
 .content {
-    border-radius: 1rem;
-    background-color: #d0ceff;
-    border: none;
-    padding: 0 .75rem
+  border-radius: 1rem;
+  background-color: var(--first-button-color);
+  border: none;
+  padding: 0 0.75rem;
+}
+.content:hover {
+  background-color: var(--first-button-color-hover);
+}
+.content:disabled {
+  background-color: var(--first-button-color-disabled);
 }
