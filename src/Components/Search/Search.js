@@ -3,7 +3,7 @@ import styles from "./Search.module.css";
 import { useSelector } from "react-redux";
 import Error from "../Helper/Error";
 import Loading from "../Helper/Loading";
-import Card from "./Card";
+import Card from "./SearchedCard";
 
 const Search = () => {
   const { data, error, loading } = useSelector(

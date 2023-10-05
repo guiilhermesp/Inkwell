@@ -1,9 +1,33 @@
 .carousel {
   display: flex;
-  width: 94rem;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: center;
   gap: 20px;
   padding: 20px 20px 0;
+}
+
+.loading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 750px) {
+  .carousel {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1023px) {
+  .carousel {
+    width: 62rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    width: 94rem;
+  }
 }

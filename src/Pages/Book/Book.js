@@ -6,7 +6,11 @@ import Card from "../Card/Card";
 
 const Book = ({ container, subject }) => {
   if (container?.error) return <Error />;
-  if (container?.loading) return <Loading />;
+  if (container?.loading) return (
+    <div className={styles.loading}>
+      <Loading />
+    </div>)
+
 
   return (
     <div className={styles.carousel}>

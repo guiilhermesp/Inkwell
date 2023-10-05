@@ -12,7 +12,6 @@ const Card = ({ data, subject }) => {
     navigate("/book" + id, { state: { ...data, mainSubject: subject } });
   }
   
-  console.log('subject: ', subject)
   return (
     <div key={data.key} className={styles.content} onClick={handleContent}>
       <div className={styles.year}>{data.first_publish_year}</div>

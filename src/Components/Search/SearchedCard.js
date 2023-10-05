@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Card.module.css";
+import styles from "./SearchedCard.module.css";
 import { AiFillStar } from "react-icons/ai";
 import placeholderBook from "../../Assets/placeholderBook.jpg";
 import { useNavigate } from "react-router-dom";
