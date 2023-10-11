@@ -1,39 +1,86 @@
 .page {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cover {
+  border-radius: 0.25rem;
+}
+
+.details {
+  margin-bottom: 20px;
+}
+
+.author,
+.publishedYear,
+.editionCount {
+  margin: 0;
+}
+
+.subjectsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subjectsList {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.subject {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 750px) {
   .title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1rem;
   }
-  
-  .details {
-    margin-bottom: 20px;
+  .subjectsTitle,
+  .author {
+    font-size: 0.9rem;
   }
-  
-  .author,
-  .publishedYear,
-  .editionCount {
-    margin: 0;
+  .cover {
+    width: 8rem;
+    height: 11rem;
   }
-  
+}
+
+@media (min-width: 751px) {
+  .title {
+    font-size: 1.1rem;
+  }
+  .subjectsTitle,
+  .author {
+    font-size: 1rem;
+  }
+  .cover {
+    width: 11rem;
+    height: 14rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2rem;
+  }
   .subjectsTitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1rem;
   }
-  
-  .subjectsList {
-    list-style-type: disc;
-    margin: 0;
-    padding-left: 20px;
+  .author {
+    font-size: 0.9rem;
   }
-  
-  .subject {
-    margin-bottom: 5px;
+  .cover {
+    width: 13rem;
+    height: 16rem;
   }
-  
+}
