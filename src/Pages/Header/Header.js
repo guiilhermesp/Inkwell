@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import { fetchSearchBook } from "../../Services/searchBookSlice";
 import { useDispatch } from "react-redux";
 import Button from "../../Components/Forms/Button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import { AiOutlineUser } from "react-icons/ai";
 
@@ -12,6 +12,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const [modal, setModal] = useState(false);
+  const isLogged = sessionStorage.getItem('isLogged')
 
   function handleRedirect() {
     navigate("");
@@ -25,6 +27,10 @@ const Header = () => {
 
   function handleKeyPress(event) {
     if (event.key === "Enter") handleSearch(event);
+  }
+
+  const handleModal = () => {
+    setModal(!modal)
   }
 
   return (
@@ -43,9 +49,15 @@ const Header = () => {
         </Button>
       </div>
 
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={handleModal}>
         <AiOutlineUser className={styles.user} />
       </div>
+      {modal && (
+        <div>
+          {!isLogged ? (<Link to='/login'>Login</Link>) : <><p>Logout</p>
+          <Link to='/settings'>Settings</Link></>}
+        </div>
+      )}
     </header>
   );
 };

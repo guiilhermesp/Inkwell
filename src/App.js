@@ -5,6 +5,11 @@ import Search from "./Components/Search/Search";
 import BookContent from "./Pages/BookContent/BookContent";
 import Header from "./Pages/Header/Header";
 import Footer from "./Pages/Footer/Footer";
+import Login from "./Pages/Login/Login";
+import Dexie from 'dexie';
+
+export const db = new Dexie('myDatabase');
+db.version(1).stores({ users: '++id,username,email' });
 
 function App() {
   return (
@@ -16,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="search" element={<Search />} />
             <Route path="book/:id" element={<BookContent />} />
+            <Route path="login" element={<Login />} />
           </Routes>
         </main>
         <Footer />
