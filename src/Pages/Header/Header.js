@@ -7,13 +7,14 @@ import Button from "../../Components/Forms/Button";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import { AiOutlineUser } from "react-icons/ai";
+import SmallModal from "../../Components/SmallModal/SmallModal";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [modal, setModal] = useState(false);
-  const isLogged = sessionStorage.getItem('isLogged')
+  const isLogged = sessionStorage.getItem("isLogged");
 
   function handleRedirect() {
     navigate("");
@@ -30,8 +31,8 @@ const Header = () => {
   }
 
   const handleModal = () => {
-    setModal(!modal)
-  }
+    setModal(!modal);
+  };
 
   return (
     <header className={styles.content}>
@@ -39,11 +40,15 @@ const Header = () => {
         <img
           src={logo}
           className={styles.image}
-          alt="Logo who redirect to home page"
+          alt="Logo who redirects to the home page"
         />
       </div>
       <div className={styles.search}>
-        <Input onChange={setSearch} onKeyPress={handleKeyPress} className={styles.input} />
+        <Input
+          onChange={setSearch}
+          onKeyPress={handleKeyPress}
+          className={styles.input}
+        />
         <Button onClick={handleSearch} className={styles.button}>
           Search
         </Button>
@@ -53,10 +58,16 @@ const Header = () => {
         <AiOutlineUser className={styles.user} />
       </div>
       {modal && (
-        <div>
-          {!isLogged ? (<Link to='/login'>Login</Link>) : <><p>Logout</p>
-          <Link to='/settings'>Settings</Link></>}
-        </div>
+        <SmallModal setModal={setModal}>
+          {!isLogged ? (
+            <Link to="/login">Login</Link>
+          ) : (
+            <>
+              <p>Logout</p>
+              <Link to="/settings">Settings</Link>
+            </>
+          )}
+        </SmallModal>
       )}
     </header>
   );

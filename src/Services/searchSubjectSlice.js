@@ -4,10 +4,9 @@ import services from "./services";
 let handleSubject;
 
 const initialState = {
-  // data: [],
-  // loading: false,
-  // error: false,
-  // [SOLVE] on multiple requests: data, loading and error are on response without been connected with any subject
+  data: [],
+  loading: false,
+  error: false,
 };
 
 const searchSubjectSlice = createSlice({
@@ -25,7 +24,7 @@ const searchSubjectSlice = createSlice({
       state[handleSubject] = {
         loading: false,
         error: false,
-        data: actions.payload.data,
+        data: actions.payload,
       };
     },
     getSearchSubjectFailure: (state) => {
@@ -52,7 +51,7 @@ export const fetchSearchSubject = (subject) => async (dispatch) => {
     dispatch(getSearchSubject(content));
     try {
       const response = await services.subject(content);
-      dispatch(getSearchSubjectSuccess(response, content));
+      dispatch(getSearchSubjectSuccess(response?.data, content));
     } catch (err) {
       console.log("err: ", err);
       dispatch(getSearchSubjectFailure(content));
