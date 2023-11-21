@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { addUser } from "./Database/db";
 
 const initialState = {
-  data: [],
+  data: false,
   loading: false,
   error: false,
 };
@@ -37,8 +37,9 @@ export default createAccountSlice.reducer;
 export const fetchCreateAccount = (form) => async (dispatch) => {
   dispatch(createAccount());
   try {
-    const response = addUser(form);
-    dispatch(createAccountSuccess(response));
+    const response = await addUser(form);
+    const data = await response;
+    dispatch(createAccountSuccess({ data }));
   } catch (err) {
     console.log("err: ", err);
     dispatch(createAccountFailure());

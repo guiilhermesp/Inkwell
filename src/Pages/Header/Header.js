@@ -43,6 +43,7 @@ const Header = () => {
           alt="Logo who redirects to the home page"
         />
       </div>
+
       <div className={styles.search}>
         <Input
           onChange={setSearch}

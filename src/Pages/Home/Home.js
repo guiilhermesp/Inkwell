@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "../../Components/Helper/Head";
 import styles from "./Home.module.css";
-import Book from "../Book/Book";
+import Carousel from "../Carousel/Carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearchSubject } from "../../Services/searchSubjectSlice";
 
@@ -19,11 +19,11 @@ const Home = () => {
     <div className={styles.content}>
       <Head title="Home" description="Initial page" />
       <h1>Adventure</h1>
-      <Book container={adventure} subject="adventure" />
+      <Carousel container={adventure} subject="adventure" />
       <h1>Love</h1>
-      <Book container={love} subject="love" />
+      <Carousel container={love} subject="love" />
       <h1>Mystery</h1>
-      <Book container={mystery} subject="mystery" />
+      <Carousel container={mystery} subject="mystery" />
     </div>
   );
 };

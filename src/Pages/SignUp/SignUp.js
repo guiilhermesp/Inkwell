@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../Components/Forms/Input";
 import Button from "../../Components/Forms/Button";
-import styles from "./Login.module.css";
+import styles from "./SignUp.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLogin } from "../../Services/loginSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { addUser, checkCredentials } from "../../Services/Database/db";
+import { fetchCreateAccount } from "../../Services/createAccountSlice";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  const dispatch = useDispatch();
+const SignUp = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
-  const [isLogged, setIsLogged] = useState(false);
 
-  const { data } = useSelector((state) => state.loginSlice);
+  const { data, error, loading } = useSelector(
+    (state) => state.createAccountSlice
+  );
 
   const handleChange = (name, e) => {
     setForm((prev) => ({
@@ -23,22 +25,17 @@ const Login = () => {
       [name]: e,
     }));
   };
-
   const handleSubmit = () => {
-    dispatch(fetchLogin(form));
+    dispatch(fetchCreateAccount(form));
   };
-
+  console.log("data a: ", data);
   useEffect(() => {
-    if (data) setIsLogged(sessionStorage.getItem("isLogged"));
-  }, [data]);
-
-  useEffect(() => {
-    if (isLogged) navigate("/");
-  }, [isLogged]);
+    if (data) navigate("/login");
+  }, []);
 
   return (
     <div className={styles.content}>
-      <h2>Login:</h2>
+      <h2>Register a new account:</h2>
       <Input
         label="username"
         onChange={(e) => handleChange("username", e)}
@@ -49,12 +46,11 @@ const Login = () => {
         onChange={(e) => handleChange("password", e)}
         className={styles.input}
       />
-      <Link to="/sign-up">Don't have an account?</Link>
       <Button onClick={handleSubmit} className={styles.button}>
-        Login
+        SignUp
       </Button>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

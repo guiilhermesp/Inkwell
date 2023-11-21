@@ -5,8 +5,10 @@ import styles from "./BookContent.module.css";
 
 const BookContent = () => {
   const { state } = useLocation();
-  const [isResponsive, setIsResponsive] = useState()
-  const source = `https://covers.openlibrary.org/b/olid/${state.cover_edition_key}-${isResponsive ?'L':'M' }.jpg`;
+  const [isResponsive, setIsResponsive] = useState();
+  const source = `https://covers.openlibrary.org/b/olid/${
+    state.cover_edition_key
+  }-${isResponsive ? "L" : "M"}.jpg`;
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,28 +27,28 @@ const BookContent = () => {
       <Head title="Book" description={state.title + " page"} />
       <h1 className={styles.title}>{state.title}</h1>
       <div>
-        <img 
-        src={source}
-        alt={`${state.title} cover`}
-        className={styles.cover}
+        <img
+          src={source}
+          alt={`${state.title} cover`}
+          className={styles.cover}
         />
       </div>
       <div className={styles.details}>
-        <p className={styles.author}>Author: {state.authors[0].name}</p>
         <p className={styles.author}>Subject: {state.mainSubject}</p>
+        <p className={styles.author}>
+          First Published Year: {state.first_publish_year}
+        </p>
+        <p className={styles.author}>Author: {state.authors[0].name}</p>
       </div>
       <div className={styles.subjects}>
         <h2 className={styles.subjectsTitle}>Subjects</h2>
         <ul className={styles.subjectsList}>
-          {state.subject.slice(0,10).map((subject, index) => (
+          {state.subject.slice(0, 10).map((subject, index) => (
             <li key={index} className={styles.subject}>
               {subject}
             </li>
           ))}
         </ul>
-        <p className={styles.publishedYear}>
-         First Published Year: {state.first_publish_year}
-       </p>
       </div>
     </div>
   );
