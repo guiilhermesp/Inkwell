@@ -21,9 +21,11 @@ const Header = () => {
   }
 
   function handleSearch(event) {
-    event.preventDefault();
-    dispatch(fetchSearchBook(search));
-    navigate("/search");
+    if (search) {
+      event.preventDefault();
+      dispatch(fetchSearchBook(search));
+      navigate("/search");
+    }
   }
 
   function handleKeyPress(event) {

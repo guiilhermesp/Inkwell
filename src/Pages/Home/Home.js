@@ -18,11 +18,11 @@ const Home = () => {
   return (
     <div className={styles.content}>
       <Head title="Home" description="Initial page" />
-      <h1>Adventure</h1>
+      <h1 className={styles.title}>Adventure</h1>
       <Carousel container={adventure} subject="adventure" />
-      <h1>Love</h1>
+      <h1 className={styles.title}>Love</h1>
       <Carousel container={love} subject="love" />
-      <h1>Mystery</h1>
+      <h1 className={styles.title}>Mystery</h1>
       <Carousel container={mystery} subject="mystery" />
     </div>
   );

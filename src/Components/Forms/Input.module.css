@@ -5,16 +5,16 @@
 }
 .content {
   border-radius: 1rem;
-  background-color: var(--first-input-color);
+  background-color: var(--first-input);
   border: none;
   outline: none;
   padding: 0 0 0 1rem;
 }
 .content:hover {
-  background-color: var(--first-input-color-hover);
+  background-color: var(--first-input));
 }
 .content:disabled {
-  background-color: var(--first-input-color-disabled);
+  background-color: var(--first-input));
 }
 @media (max-width: 750px) {
 }

@@ -2,13 +2,13 @@
 
 .content {
   border-radius: 1rem;
-  background-color: var(--first-button-color);
+  background-color: var(--first-button);
   border: none;
   padding: 0 0.75rem;
 }
 .content:hover {
-  background-color: var(--first-button-color-hover);
+  background-color: var(--first-button));
 }
 .content:disabled {
-  background-color: var(--first-button-color-disabled);
+  background-color: var(--first-button));
 }
